@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Red Store | Cart</title>
+     <link rel="stylesheet" href="../css/style.css" />
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+     <script src="https://kit.fontawesome.com/5714f86e7f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+     <!-- Header -->
+
+     <header id="header">
+          <div class="container">
+               <div class="navbar">
+                    <div class="logo">
+                         <a href="../index.html"><img src="../images/logo.png" width="165px"></a>
+                    </div>
+                    <nav>
+                         <ul id="MenuItems">
+                              <li><a href="../index.html">Home</a></li>
+                              <li><a href="../html/product.html">Products</a></li>
+                              <li><a href="">About</a></li>
+                              <li><a href="">Contact</a></li>
+                              <li><a href="../html/account.html">Account</a></li>
+                         </ul>
+                    </nav>
+                    <a href="../html/cart.html"><img src="../images/cart.png" width="30px" height="30px"></a>
+                    <div class="cart-count">0</div>
+                    <img src="../images/menu.png" class="menu-icon" onclick="menutoggle()">
+               </div>
+          </div>
+     </header>
+
+<!-- Cart Products Details -->
+
+     <div class="small-container cart">
+          <table id="cart-container">
+               <tr class="first-container">
+                    <th>Product</th>
+                    <th class="gap">Quantity</th>
+                    <th>Subtotal</th>
+               </tr>
+               <!-- <tr>
+                    <td>
+                         <div class="cart-info">
+                              <img src="images/buy-1.jpg">
+                              <div>
+                                   <h3 class="cart-h3">Red Printed T-Shirt</h3>
+                                   <p class="price">Price : $50.00</p>
+                                   
+                                   <a href="#" class="remove-btn">Remove</a>
+                              </div>
+                         </div>
+                    </td>
+                    <td>
+                         <input type="number" value="1">
+                    </td>
+                    <td>$50.00</td>
+               </tr> -->
+          </table> 
+          <div class="total-prices">
+               <table>
+                    <tr>
+                         <td>Subtotal</td>
+                         <td class="subtotal">$0.00</td>
+                    </tr>
+                    <tr>
+                         <td>Tax</td>
+                         <td class="tax">$0.00</td>
+                    </tr>
+                    <tr>
+                         <td>Total</td>
+                         <td class="all-total">$0.00</td>
+                    </tr>
+               </table>              
+          </div>
+          <div class="cart-button">
+               <a href="" class="btn">Proceed To CheckOut &#8594</a>
+          </div>
+     </div>
+
+     <!-- Footer -->
+
+     <section id="footer">
+          <div class="container">
+               <div class="row">
+                    <div class="footer-col-1">
+                         <h3>Download Our App</h3>
+                         <p>Download App for Android and Ios Mobile Phone</p>
+                         <div class="app-logo"> 
+                              <img src="../images/play-store.png">
+                              <img src="../images/app-store.png">
+                         </div>
+                    </div>
+                    <div class="footer-col-2">
+                         <img src="../images/logo-white.png">
+                         <p>Our Purpose Is To Sustainably Make The Pleasure And Benefits Of Sports Accessible To The Many.</p>
+                    </div>
+                    <div class="footer-col-3">
+                         <h3>Useful Links</h3>
+                         <ul>
+                              <li>Coupons</li>
+                              <li>Blog Posts</li>
+                              <li>Return Policy</li>
+                              <li>Join Affiliate</li>
+                         </ul>
+                    </div>
+                    <div class="footer-col-4">
+                         <h3>Follow Us</h3>
+                         <ul>
+                              <li>Facebook</li>
+                              <li>Instagram</li>
+                              <li>Twitter</li>
+                              <li>Youtube</li>
+                         </ul>
+                    </div>
+               </div>
+               <hr>
+               <p class="copyright">Copyright &copy; 2022 Adesugba Samuel</p>
+          </div>
+     </section>
+     <script>
+          let cart = localStorage.getItem("cart")
+          ? JSON.parse(localStorage.getItem("cart"))
+          : [];
+
+          function displayTotal(Total) {
+               cart.forEach(() => {
+               const totalMoney = cart.reduce((acc, curr) => {
+                    acc += curr.finalPrice;
+                    return acc;
+               }, 0);
+
+               const finalMoney = parseFloat(totalMoney);
+               const subTotal = document.querySelector(".subtotal");
+               subTotal.textContent = `$${parseFloat(finalMoney).toFixed(2)}`;
+               const Tax = document.querySelector(".tax");
+               Tax.textContent = `$${parseFloat(0.1 * finalMoney).toFixed(2)}`;
+               const allTotal = document.querySelector(".all-total");
+               allTotal.textContent = `$${parseFloat(
+                    finalMoney + JSON.parse(0.1 * finalMoney)
+               ).toFixed(2)}`;
+               document.querySelector(".cart-count").textContent = cart.length;
+               });
+          }
+
+
+          function removeItem(event){
+          cart.forEach((item) => {
+               const removeBtn = document.querySelectorAll(".remove-btn");
+               const Id = event.currentTarget.dataset.id;
+               const cartItem = event.currentTarget.parentElement.parentElement.parentElement.parentElement;
+               const cartContainer = document.getElementById("cart-container");
+               cartContainer.removeChild(cartItem);
+               cart = cart.filter((item) => {
+                    if (item.id !== Id) {
+                         return item;
+                    }
+               });
+               localStorage.setItem("cart", JSON.stringify(cart));
+               displayTotal();
+               document.querySelector(".cart-count").textContent = cart.length;
+          });
+          }
+     </script>
+     <script src="../js/main.js" type="module"></script>
+     <script src="../js/cart.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Red Store | Product Details</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5714f86e7f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Header -->
+
+    <header id="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <a href="../index.html"
+              ><img src="../images/logo.png" width="165px"
+            /></a>
+          </div>
+          <nav>
+            <ul id="MenuItems">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../html/product.html">Products</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="">Contact</a></li>
+              <li><a href="../html/account.html">Account</a></li>
+            </ul>
+          </nav>
+          <a href="../html/cart.html"
+            ><img src="../images/cart.png" width="30px" height="30px"
+          /></a>
+          <img
+            src="../images/menu.png"
+            class="menu-icon"
+            onclick="menutoggle()"
+          />
+          <div class="cart-count">0</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Products Details -->
+
+    <div class="small-container single-product" data-id="1">
+      <div class="row">
+        <div class="col-2">
+          <img src="../products-img/person-1.jpg" width="100%" id="ProductImg" />
+          <div class="gallery-images-row">
+            <div class="gallery-images-col">
+              <img
+                src="../products-img/person-1.jpg"
+                width="100%"
+                class="Gallery-img"
+              />
+            </div>
+            <div class="gallery-images-col">
+              <img
+                src="../products-img/person-2.jpg"
+                width="100%"
+                class="Gallery-img"
+              />
+            </div>
+            <div class="gallery-images-col">
+              <img
+                src="../products-img/person-3.jpg"
+                width="100%"
+                class="Gallery-img"
+              />
+            </div>
+            <div class="gallery-images-col">
+              <img
+                src="../products-img/person-4.jpg"
+                width="100%"
+                class="Gallery-img"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-2 cart-product">
+          <p>Home / T-Shirt</p>
+          <h1>Red Printed T-Shirt By HRX</h1>
+          <h4>$50.00</h4>
+          <select>
+            <option>Select Size</option>
+            <option>XXL</option>
+            <option>XL</option>
+            <option>Large</option>
+            <option>Medium</option>
+            <option>Small</option>
+          </select>
+          <input type="number" value="1" />
+          <a href="" class="btn cart-btn" data-id="1">Add To Cart</a>
+
+          <h3>Product Details<i class="fa-solid fa-indent"></i></h3>
+          <p>
+            Give your summer wardrope a style upgrade with BTS Man's Active
+            T-Shirt.Team it with a pair of shorts for your morning workout or a
+            donims for an evening out with the guys.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-container">
+      <div class="row row-2">
+        <h2>Related Products</h2>
+        <p>
+          <a href="../index.html" style="text-decoration: none; color: black"
+            >View More</a
+          >
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <a href="./product-3.html">
+            <img src="../products-img/cloth-3-4.jpg" />
+          </a>
+          <h4>BTS Golf T-Shirt</h4>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <p>$49.00</p>
+        </div>
+        <div class="col-4">
+          <a href="./shoe.html">
+            <img src="..//products-img/shoe-4.jpg" />
+          </a>
+          <h4>BTS Sport Shoe</h4>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <p>$58.99</p>
+        </div>
+        <div class="col-4">
+          <a href="./trouser.html">
+            <img src="../products-img/pants-4.jpg" />
+          </a>
+          <h4>BTS Pants</h4>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <p>$45.00</p>
+        </div>
+        <div class="col-4">
+          <a href="./product-2.html">
+            <img src="../products-img/cloth-4.jpg" />
+          </a>
+          <h4>BTS Beach T-Shirt</h4>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <p>$45.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+
+    <section id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and Ios Mobile Phone</p>
+            <div class="app-logo">
+              <img src="../images/play-store.png" />
+              <img src="../images/app-store.png" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="../images/logo-white.png" />
+            <p>
+              Our Purpose Is To Sustainably Make The Pleasure And Benefits Of
+              Sports Accessible To The Many.
+            </p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Posts</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>Twitter</li>
+              <li>Youtube</li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p class="copyright">Copyright &copy; 2022 Adesugba Samuel</p>
+      </div>
+    </section>
+
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/product.js" type="module"></script>
+  </body>
+</html>
